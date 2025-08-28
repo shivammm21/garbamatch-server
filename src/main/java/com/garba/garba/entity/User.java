@@ -46,10 +46,22 @@ public class User {
     @Column(name = "wallet_amount", precision = 12, scale = 2, nullable = false)
     private BigDecimal walletAmount;
 
+    @Column(name = "profile_pic_id")
+    private Long profilePicId; // Reference to UserImage table
+
+    @Column(length = 500)
+    private String bio; // User biography/description
+
+    @Column(name = "plan_mode", length = 50, nullable = false)
+    private String planMode; // User plan type: basic, premium, etc.
+
     @PrePersist
     public void prePersist() {
         if (walletAmount == null) {
             walletAmount = BigDecimal.ZERO;
+        }
+        if (planMode == null || planMode.trim().isEmpty()) {
+            planMode = "basic";
         }
     }
 }

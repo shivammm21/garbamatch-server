@@ -17,4 +17,8 @@ public class UserResponse {
     String garbaSkill;
     String location;
     BigDecimal walletAmount;
+    Long profilePicId;
+    String bio;
+    String planMode;
+    String token;
 }

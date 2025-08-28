@@ -34,4 +34,9 @@ public class UserCreateRequest {
 
     @Size(max = 120)
     private String location;
+
+    private String profilePicture; // Base64 encoded image data
+
+    @Size(max = 500)
+    private String bio; // User biography/description
 }

@@ -11,4 +11,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByEmailIgnoreCase(String email);
     Optional<User> findByMobile(String mobile);
+    
+    // Count users by plan type
+    Long countByPlanMode(String planMode);
 }
